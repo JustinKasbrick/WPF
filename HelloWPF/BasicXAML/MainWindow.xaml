@@ -1,0 +1,41 @@
+﻿<Window x:Class="BasicXAML.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BasicXAML"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button>A plain old Button</Button>
+
+        <Button FontWeight="Bold" Content="A Bold Button" />
+
+        <!-- This is equivalent to the bold button above -->
+        <Button>
+            <Button.FontWeight>Bold</Button.FontWeight>
+            <Button.Content>A Bold Button</Button.Content>
+        </Button>
+
+        <Button>
+            <Button.FontWeight>Bold</Button.FontWeight>
+            <Button.Content>
+                <WrapPanel>
+                    <TextBlock Foreground="Blue">Multi</TextBlock>
+                    <TextBlock Foreground="Red">Colour</TextBlock>
+                    <TextBlock>Button</TextBlock>
+                </WrapPanel>
+            </Button.Content>
+        </Button>
+        
+        <!-- This multi colour button is equivalent to the one above-->
+        <Button FontWeight="Bold">
+            <WrapPanel>
+                <TextBlock Foreground="Blue">Multi</TextBlock>
+                <TextBlock Foreground="Red">Colour</TextBlock>
+                <TextBlock>Button</TextBlock>
+            </WrapPanel>
+        </Button>
+        
+    </Grid>
+</Window>
